@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Samara Ferreira <ferreirasamara.sf@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/node": "^14.14.6",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
