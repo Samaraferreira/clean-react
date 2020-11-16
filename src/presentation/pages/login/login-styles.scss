@@ -45,24 +45,6 @@ button {
   width: 100vw;
   height: 100vh;
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 4px solid $primaryDark;
-    background-color: $primary;
-
-    img {
-      width: 60px;
-      margin-top: 40px;
-    }
-
-    h1 {
-      color: $white;
-      margin: 16px 0px 40px;
-    }
-  }
-
   .form {
     margin-top: 24px;
     display: flex;
