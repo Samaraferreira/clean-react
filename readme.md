@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/Samaraferreira/clean-react.svg?branch=main)](https://travis-ci.org/Samaraferreira/clean-react)
+[![Coverage Status](https://coveralls.io/repos/github/Samaraferreira/clean-react/badge.svg?branch=main)](https://coveralls.io/github/Samaraferreira/clean-react?branch=main)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![MIT License](https://img.shields.io/badge/License-MIT%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+
 # **4Dev React - Enquetes para Programadores**
 
 [![alt text](.github/course-logo.png 'Link para o treinamento')](https://www.udemy.com/course/react-com-mango/?referralCode=552F88858EAE76346C8B)
