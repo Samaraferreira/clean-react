@@ -47,6 +47,7 @@
     "react/jsx-uses-vars": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "no-useless-escape": "off",
-    "@typescript-eslint/ban-types": "off"
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
