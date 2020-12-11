@@ -1,6 +1,15 @@
 import faker from 'faker'
 import * as FormHelper from '../support/form-helper'
-import * as Http from '../support/login-mock'
+import * as Http from '../support/signup-mock'
+
+const simulateValidSubmit = (): void => {
+  cy.getByTestId('name').focus().type(faker.random.alphaNumeric(6))
+  cy.getByTestId('email').focus().type(faker.internet.email())
+  const password = faker.random.alphaNumeric(5)
+  cy.getByTestId('password').focus().type(password)
+  cy.getByTestId('passwordConfirmation').focus().type(password)
+  cy.getByTestId('submit').click()
+}
 
 describe('SignUp', () => {
   beforeEach(() => {
@@ -32,7 +41,7 @@ describe('SignUp', () => {
   })
 
   it('Should present valid state if form is valid', () => {
-    cy.getByTestId('name').focus().type(faker.name.findName())
+    cy.getByTestId('name').focus().type(faker.random.alphaNumeric(6))
     FormHelper.testInputStatus('name')
     cy.getByTestId('email').focus().type(faker.internet.email())
     FormHelper.testInputStatus('email')
@@ -43,5 +52,12 @@ describe('SignUp', () => {
     FormHelper.testInputStatus('passwordConfirmation')
     cy.getByTestId('submit').should('not.have.attr', 'disabled')
     cy.getByTestId('error-wrap').should('not.have.descendants')
+  })
+
+  it('Should present EmailInUseError on 403', () => {
+    Http.mockEmailInUseError()
+    simulateValidSubmit()
+    FormHelper.testMainError('Esse e-mail já está em uso')
+    FormHelper.testUrl('/signup')
   })
 })
