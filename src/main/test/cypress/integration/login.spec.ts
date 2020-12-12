@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import faker from 'faker'
 import * as FormHelper from '../support/form-helper'
-import * as Http from '../support/login-mock'
+import * as Http from '../support/login-mocks'
 
 const populateFields = (): void => {
   cy.getByTestId('email').focus().type(faker.internet.email())
@@ -64,12 +64,12 @@ describe('Login', () => {
     FormHelper.testUrl('/login')
   })
 
-  it('Should save accessToken if valid credentials are provided', () => {
+  it('Should save account if valid credentials are provided', () => {
     Http.mockOk()
     simulateValidSubmit()
     cy.getByTestId('error-wrap').should('not.have.descendants')
     FormHelper.testUrl('/')
-    FormHelper.testLocalStorageItem('accessToken')
+    FormHelper.testLocalStorageItem('account')
   })
 
   it('Should prevent multiple submits', () => {
