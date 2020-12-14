@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 const MainHeader: React.FC = () => {
   const history = useHistory()
-  const { setCurrentAccount } = useContext(ApiContext)
+  const { setCurrentAccount, getCurrentAccount } = useContext(ApiContext)
 
   const logout = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -21,7 +21,7 @@ const MainHeader: React.FC = () => {
       <div className={Styles.headerContent}>
         <Logo />
         <div className={Styles.logoutWrap}>
-          <span>Rodrigo</span>
+          <span data-testid="username">{getCurrentAccount().name}</span>
           <a data-testid="logout" href="#" onClick={logout}>
             Sair
           </a>
